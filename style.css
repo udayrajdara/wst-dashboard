@@ -28,11 +28,109 @@
 
 .api-data{
     width: 100%;
-    margin-top: 3rem;    
+    margin-top: 3rem;  
+
 }
 
 span{
     color: red;
     font-size: 14px;
-    padding: 5px 0;
+    padding: 5px 8px;
+}
+
+
+
+
+
+
+.data-item{
+    background-color: rgba(248, 246, 246, 0.566);
+    padding: 0.6rem;
+    border: 1px solid black;
+    margin: 0.5rem 0;
+}
+
+.data-item:nth-child(even){
+    background-color: rgba(232, 230, 230, 0.737);
+}
+
+.id{
+    font-family: "Noto Serif Telugu", serif;
+    padding: 0.3rem 1.3rem;
+}
+.date-p{
+    font-family:'Times New Roman', Times, serif;
+    background-color: brown;
+    color: white;
+    padding: 0.3rem 1.3rem;
+}
+.telugu-verse-p{
+    font-family: "Noto Serif Telugu", serif;
+    padding: 0.3rem 1.3rem;
+}
+.telugu-content-p{
+    font-family: "Noto Serif Telugu", serif;
+    padding: 0.3rem 1.3rem;
+}
+
+.hindi-verse-p{
+    font-family: "Noto Serif Devanagari", serif;
+    padding: 0.3rem 1.3rem;
+}
+.hindi-content-p{
+    font-family: "Noto Serif Devanagari", serif;
+    padding: 0.3rem 1.3rem;
+}
+
+.english-verse-p{
+    font-family:'Times New Roman', Times, serif;
+    padding: 0.3rem 1.3rem;
+}
+.english-content-p{
+    font-family:'Times New Roman', Times, serif;
+    padding: 0.3rem 1.3rem;
+}
+
+
+
+.id strong{
+    color: brown;
+}
+.date-p strong{
+    color: white;
+}
+.telugu-verse-p strong{
+    color: brown;
+}
+.telugu-content-p strong{
+    color: brown;
+      
+}
+
+.hindi-verse-p strong{
+    color: brown;
+}
+.hindi-content-p strong{
+    color: brown;
+}
+
+.english-verse-p strong{
+    color: brown;
+}
+.english-content-p strong{
+    color: brown;  
+}
+
+
+
+@media (max-width: 500px) {
+    .form-input input{
+        width: 100%;
+        padding: 0.3rem 0.5rem;
+        border: none;
+        outline: none;
+        border-radius: 0;
+        border-bottom: 2px solid rgb(7, 7, 209);
+    }
+    
 }
