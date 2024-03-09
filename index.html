@@ -98,13 +98,14 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
 
 
     const data = {
-        date : date,
+        date: date,
         teluguVerse: teluguVerse,
         teluguContent: teluguContent,
         englishVerse: englishVerse,
         englishContent: englishContent,
         hindiVerse: hindiVerse,
-        hindiContent: hindiContent
+        hindiContent: hindiContent,
+        image: imageLink
     };
 
 
@@ -279,6 +280,7 @@ function displayData(data) {
             <p class="english-content-p"><strong>English Content:</strong> ${item.englishContent}</p>
             <p class="hindi-verse-p"><strong>Telugu Verse:</strong> ${item.hindiVerse}</p>
             <p class="hindi-content-p"><strong>Telugu Verse:</strong> ${item.hindiContent}</p>
+            <img class="background-image-api" src="${item.image}" alt="">
         `;
         
         // Set the HTML content of the div

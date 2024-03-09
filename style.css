@@ -64,6 +64,12 @@ span{
     color: white;
     padding: 0.3rem 1.3rem;
 }
+
+.background-image-api{
+    width: 300px;
+    padding: 0.3rem 1.3rem;
+
+}
 .telugu-verse-p{
     font-family: "Noto Serif Telugu", serif;
     padding: 0.3rem 1.3rem;
