@@ -32,6 +32,8 @@
                 <span id="image-link-error"></span><br>
                 <input type="date" pattern="\d{4}-\d{2}-\d{2}" min="2024-01-01" max="2030-12-31" name="date" id="date"><br>
                 <span id="date-error"></span><br>
+                <input type="text" placeholder="Enter Location" name="location" id="location"><br>
+                <span id="location-error"></span><br>
                 <button type="submit" name="button" class="btn mt-4 bg-primary text-white">Submit</button>
             </div>
             </form>
@@ -74,6 +76,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
     const hindiContent = document.getElementById('content-hindi').value;
     const date = document.getElementById('date').value;
     const imageLink = document.getElementById('image-link').value;
+    const location = document.getElementById('location').value;
+
 
 
 
@@ -87,6 +91,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
     var engConError = document.getElementById('english-content-error');
     var imageLinkError = document.getElementById('image-link-error');
     var dateError = document.getElementById('date-error');
+    var locationError = document.getElementById('location-error');
+
     
 
 
@@ -105,7 +111,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
         englishContent: englishContent,
         hindiVerse: hindiVerse,
         hindiContent: hindiContent,
-        image: imageLink
+        image: imageLink,
+        location: location
     };
 
 
@@ -116,6 +123,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             hinConError.innerHTML = '';
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
+            locationError.innerHTML = '';
+
         }else if(teluguContent == '' || teluguContent === null){
             telVerError.innerHTML = '';
             telConError.innerHTML = 'Please provide telugu content';
@@ -123,6 +132,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             hinConError.innerHTML = '';
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
+            locationError.innerHTML = '';
+
         }else if(englishVerse == '' || englishVerse === null){
             telVerError.innerHTML = '';
             telConError.innerHTML = '';
@@ -130,6 +141,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             hinConError.innerHTML = '';
             engVerError.innerHTML = 'Please provide english verse';
             engConError.innerHTML = '';
+            locationError.innerHTML = '';
+
         }else if(englishContent == '' || englishContent === null){
             telVerError.innerHTML = '';
             telConError.innerHTML = '';
@@ -137,6 +150,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             hinConError.innerHTML = '';
             engVerError.innerHTML = '';
             engConError.innerHTML = 'Please provide english content';
+            locationError.innerHTML = '';
+
         }else if(hindiVerse == '' || hindiVerse === null){
             telVerError.innerHTML = '';
             telConError.innerHTML = '';
@@ -144,6 +159,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             hinConError.innerHTML = '';
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
+            locationError.innerHTML = '';
+
         }else if(hindiContent == '' || hindiContent === null){
             telVerError.innerHTML = '';
             telConError.innerHTML = '';
@@ -151,6 +168,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             hinConError.innerHTML = 'Please provide hindi content';
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
+            locationError.innerHTML = '';
+
         }else if(imageLink.length < 4){
             telVerError.innerHTML = '';
             telConError.innerHTML = '';
@@ -158,6 +177,7 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             hinConError.innerHTML = '';
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
+            locationError.innerHTML = '';
             imageLinkError.innerHTML = 'Please provide image link'
         }else if(imageLink == '' || imageLink === null){
             telVerError.innerHTML = '';
@@ -166,6 +186,7 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             hinConError.innerHTML = '';
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
+            locationError.innerHTML = '';
             imageLinkError.innerHTML = 'Please provide image link'
         }else if(date == ''){
             telVerError.innerHTML = '';
@@ -175,6 +196,19 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
             dateError.innerHTML = 'Please select date'
+            locationError.innerHTML = '';
+
+        }else if(location == ''){
+
+            telVerError.innerHTML = '';
+            telConError.innerHTML = '';
+            hinVerError.innerHTML = '';
+            hinConError.innerHTML = '';
+            engVerError.innerHTML = '';
+            engConError.innerHTML = '';
+            dateError.innerHTML = ''
+            locationError.innerHTML = 'Please select date';
+
         }else{
 
     // Send data to API
@@ -203,6 +237,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             hinConError.innerHTML = '';
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
+            locationError.innerHTML = '';
+
        }, 800);
     }
     })
@@ -279,7 +315,8 @@ function displayData(data) {
             <p class="english-verse-p"><strong>English Verse:</strong> ${item.englishVerse}</p>
             <p class="english-content-p"><strong>English Content:</strong> ${item.englishContent}</p>
             <p class="hindi-verse-p"><strong>Hindi Verse:</strong> ${item.hindiVerse}</p>
-            <p class="hindi-content-p"><strong>Hindi Verse:</strong> ${item.hindiContent}</p>
+            <p class="hindi-content-p"><strong>Hindi Content:</strong> ${item.hindiContent}</p>
+            <p class="location">Location: ${item.location}</p>
             <img class="background-image-api" src="${item.image}" alt="wst">
         `;
         

@@ -72,29 +72,33 @@ span{
 }
 .telugu-verse-p{
     font-family: "Noto Serif Telugu", serif;
-    padding: 0.3rem 1.3rem;
+    padding: 0 1.3rem;
 }
 .telugu-content-p{
     font-family: "Noto Serif Telugu", serif;
-    padding: 0.3rem 1.3rem;
+    padding: 0 1.3rem;
 }
 
 .hindi-verse-p{
     font-family: "Noto Serif Devanagari", serif;
-    padding: 0.3rem 1.3rem;
+    padding: 0 1.3rem;
 }
 .hindi-content-p{
     font-family: "Noto Serif Devanagari", serif;
-    padding: 0.3rem 1.3rem;
+    padding: 0 1.3rem;
 }
 
 .english-verse-p{
     font-family:'Times New Roman', Times, serif;
-    padding: 0.3rem 1.3rem;
+    padding: 0 1.3rem;
 }
 .english-content-p{
     font-family:'Times New Roman', Times, serif;
-    padding: 0.3rem 1.3rem;
+    padding: 0 1.3rem;
+}
+.location{
+    font-family:'Times New Roman', Times, serif;
+    padding: 0 1.3rem;
 }
 
 
