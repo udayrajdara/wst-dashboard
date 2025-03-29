@@ -28,12 +28,14 @@
                 <span id="hindi-verse-error"></span><br>
                 <input type="text" placeholder="Enter Hindi Bible content" name="hindicontent" id="content-hindi"><br>
                 <span id="hindi-content-error"></span><br>
-                <input type="text" placeholder="Paste image link here..." name="imagelink" id="image-link"><br>
+                <input type="text" placeholder="Paste thumbnail link here..." name="imagelink" id="image-link"><br>
                 <span id="image-link-error"></span><br>
                 <input type="date" pattern="\d{4}-\d{2}-\d{2}" min="2024-01-01" max="2030-12-31" name="date" id="date"><br>
                 <span id="date-error"></span><br>
                 <input type="text" placeholder="Enter Location" name="location" id="location"><br>
                 <span id="location-error"></span><br>
+                <input type="text" placeholder="Past image url here..." name="imagelink" id="imagelink"><br>
+                <span id="imagelink-error"></span><br>
                 <button type="submit" name="button" class="btn mt-4 bg-primary text-white">Submit</button>
             </div>
             </form>
@@ -77,6 +79,7 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
     const date = document.getElementById('date').value;
     const imageLink = document.getElementById('image-link').value;
     const location = document.getElementById('location').value;
+    const imageUrl = document.getElementById('imagelink').value;
 
 
 
@@ -92,6 +95,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
     var imageLinkError = document.getElementById('image-link-error');
     var dateError = document.getElementById('date-error');
     var locationError = document.getElementById('location-error');
+    var imageUrlError = document.getElementById('imagelink-error');
+
 
     
 
@@ -112,7 +117,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
         hindiVerse: hindiVerse,
         hindiContent: hindiContent,
         image: imageLink,
-        location: location
+        location: location,
+        imageLink: imageUrl,
     };
 
 
@@ -124,6 +130,9 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
             locationError.innerHTML = '';
+            imageLinkError.innerHTML = '';
+            imageUrlError.innerHTML = '';
+
 
         }else if(teluguContent == '' || teluguContent === null){
             telVerError.innerHTML = '';
@@ -133,6 +142,9 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
             locationError.innerHTML = '';
+            imageLinkError.innerHTML = '';
+            imageUrlError.innerHTML = '';
+
 
         }else if(englishVerse == '' || englishVerse === null){
             telVerError.innerHTML = '';
@@ -142,6 +154,9 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engVerError.innerHTML = 'Please provide english verse';
             engConError.innerHTML = '';
             locationError.innerHTML = '';
+            imageLinkError.innerHTML = '';
+            imageUrlError.innerHTML = '';
+
 
         }else if(englishContent == '' || englishContent === null){
             telVerError.innerHTML = '';
@@ -151,6 +166,9 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engVerError.innerHTML = '';
             engConError.innerHTML = 'Please provide english content';
             locationError.innerHTML = '';
+            imageLinkError.innerHTML = '';
+            imageUrlError.innerHTML = '';
+
 
         }else if(hindiVerse == '' || hindiVerse === null){
             telVerError.innerHTML = '';
@@ -160,6 +178,9 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
             locationError.innerHTML = '';
+            imageLinkError.innerHTML = '';
+            imageUrlError.innerHTML = '';
+
 
         }else if(hindiContent == '' || hindiContent === null){
             telVerError.innerHTML = '';
@@ -169,6 +190,9 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
             locationError.innerHTML = '';
+            imageLinkError.innerHTML = '';
+            imageUrlError.innerHTML = '';
+            
 
         }else if(imageLink.length < 4){
             telVerError.innerHTML = '';
@@ -178,7 +202,9 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
             locationError.innerHTML = '';
-            imageLinkError.innerHTML = 'Please provide image link'
+            imageLinkError.innerHTML = 'Please provide image link';
+            imageUrlError.innerHTML = '';
+
         }else if(imageLink == '' || imageLink === null){
             telVerError.innerHTML = '';
             telConError.innerHTML = '';
@@ -187,7 +213,9 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
             locationError.innerHTML = '';
-            imageLinkError.innerHTML = 'Please provide image link'
+            imageLinkError.innerHTML = 'Please provide image link';
+            imageUrlError.innerHTML = '';
+
         }else if(date == ''){
             telVerError.innerHTML = '';
             telConError.innerHTML = '';
@@ -197,6 +225,8 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engConError.innerHTML = '';
             dateError.innerHTML = 'Please select date'
             locationError.innerHTML = '';
+            imageUrlError.innerHTML = '';
+
 
         }else if(location == ''){
 
@@ -208,8 +238,23 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engConError.innerHTML = '';
             dateError.innerHTML = ''
             locationError.innerHTML = 'Please select date';
+            imageUrlError.innerHTML = '';
+
+
+        }else if(imageUrl == ''){
+            telVerError.innerHTML = '';
+            telConError.innerHTML = '';
+            hinVerError.innerHTML = '';
+            hinConError.innerHTML = '';
+            engVerError.innerHTML = '';
+            engConError.innerHTML = '';
+            dateError.innerHTML = ''
+            locationError.innerHTML = '';
+            imageUrlError.innerHTML = 'Please select date';
 
         }else{
+
+        
 
     // Send data to API
     fetch('https://65e9e2a7c9bf92ae3d3a88a6.mockapi.io/worshipseriestelugu/bible-verse', {
@@ -238,6 +283,7 @@ document.forms['wstForm'].addEventListener('submit', (e) => {
             engVerError.innerHTML = '';
             engConError.innerHTML = '';
             locationError.innerHTML = '';
+            imageUrlError.innerHTML = '';
 
        }, 800);
     }
@@ -316,7 +362,8 @@ function displayData(data) {
             <p class="english-content-p"><strong>English Content:</strong> ${item.englishContent}</p>
             <p class="hindi-verse-p"><strong>Hindi Verse:</strong> ${item.hindiVerse}</p>
             <p class="hindi-content-p"><strong>Hindi Content:</strong> ${item.hindiContent}</p>
-            <p class="location">Location: ${item.location}</p>
+            <p class="location"><strong>Location:</strong> ${item.location}</p>
+            <p class="imageurl"><strong>Image Link:</strong> ${item.imageLink}</p>
             <img class="background-image-api" src="${item.image}" alt="wst">
         `;
         

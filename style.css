@@ -100,35 +100,17 @@ span{
     font-family:'Times New Roman', Times, serif;
     padding: 0 1.3rem;
 }
-
-
-
-.id strong{
-    color: brown;
+.location{
+    font-family:'Times New Roman', Times, serif;
+    padding: 0 1.3rem;
 }
-.date-p strong{
-    color: white;
-}
-.telugu-verse-p strong{
-    color: brown;
-}
-.telugu-content-p strong{
-    color: brown;
-      
+.imageurl{
+    font-family:'Times New Roman', Times, serif;
+    padding: 0 1.3rem;
 }
 
-.hindi-verse-p strong{
+ strong{
     color: brown;
-}
-.hindi-content-p strong{
-    color: brown;
-}
-
-.english-verse-p strong{
-    color: brown;
-}
-.english-content-p strong{
-    color: brown;  
 }
 
 
